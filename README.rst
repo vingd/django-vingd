@@ -110,7 +110,7 @@ Popup version
     </script> 
 
 
-3. Handle ajax requests in your VoteOrders (models.py)::
+3. Handle ajax requests in your VoteOrders (models.py):
 
 .. code-block:: python
 
@@ -139,7 +139,7 @@ In those cases one should raise exception within take_order and accept_order res
 Handling exceptions
 ===================
 
-To gracefully handle any kind of exception one should use VingdOrder handle_exception function::
+To gracefully handle any kind of exception one should use VingdOrder handle_exception function:
 
 .. code-block:: python
 
