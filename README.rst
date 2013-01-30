@@ -75,7 +75,9 @@ Basic setup
         (r'^vgd/', include('django_vingd.urls')),
     )
 
-5. In HTML template place vingd order forms::
+5. In HTML template place vingd order forms:
+
+.. code-block:: django
 
     {% for candidate in candidates %}
         <form action="{% url vingd_order "VoteOrder" %}" method="POST">
@@ -94,7 +96,9 @@ Popup version
 
 1. Add jQuery to your page.
 
-2. Add popup related javascript to HTML head::
+2. Add popup related javascript to HTML head:
+
+.. code-block:: django
 
     {% load vingd_tt %}
     {% vingd_scripts %}
@@ -108,7 +112,6 @@ Popup version
             });
         });
     </script> 
-
 
 3. Handle ajax requests in your VoteOrders (models.py):
 
@@ -130,9 +133,9 @@ Deny access to content
 ======================
 
 In some situations user should not be allowed to access content. Such cases should be handled both for:
-  
-  * denying access at vingd ordering time (before sending user to vingd)
-  * denying access at vingd verification time (after user has returned from vingd).
+
+- denying access at vingd ordering time (before sending user to vingd)
+- denying access at vingd verification time (after user has returned from vingd).
 
 In those cases one should raise exception within take_order and accept_order respectively.
 
@@ -147,4 +150,3 @@ To gracefully handle any kind of exception one should use VingdOrder handle_exce
         # log exception
         # inform user
         return HttpResponse("Inform user that something has gone wrong.")
-
