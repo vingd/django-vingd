@@ -75,7 +75,7 @@ Basic setup
         (r'^vgd/', include('django_vingd.urls')),
     )
 
-5. In HTML template place vingd order forms:
+5. In HTML template place vingd order forms::
 
     {% for candidate in candidates %}
         <form action="{% url vingd_order "VoteOrder" %}" method="POST">
