@@ -94,7 +94,7 @@ Popup version
 
 1. Add jQuery to your page.
 
-2. Add popup related javascript to HTML head:
+2. Add popup related javascript to HTML head::
 
     {% load vingd_tt %}
     {% vingd_scripts %}
