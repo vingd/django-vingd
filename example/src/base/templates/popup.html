@@ -1,0 +1,37 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://cdn.vingd.lo/knopso-design/v3.0/js/jquery-1.7.2.min.js"></script>
+    
+    {% load vingd_tt %}
+    {% vingd_scripts %}
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('form.vingd_popup').vingd_popup(function(data){
+                // uspjeh
+                $(this).find('.votes').html(data.votes);
+            }, function(data){
+				// neuspjeh
+                alert((data.msg)? data.msg : 'Neuspjeh');
+            });
+        });
+    </script>    
+</head>
+
+<body>
+    <h3>Popup verzija</h3>
+
+    {% for c in cs %}
+        <form class="vingd_popup" action="{% url vingd_order "VoteOrder" %}" method="POST">
+            {% csrf_token %}
+            {{ c.name }}: <span class="votes">{{ c.votes }}</span>
+            <input type="hidden" name="candidate_id" value="{{ c.id }}">
+            <input type="submit" value="glasaj">
+        </form>
+    {% endfor %}
+    
+    <br/><br/><br/><br/>
+    <a href="/">redirekt verzija</a>
+</body>
+
+</html>

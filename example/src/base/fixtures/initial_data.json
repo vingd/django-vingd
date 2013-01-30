@@ -1,0 +1,26 @@
+[
+  {
+    "model": "base.candidate",
+    "pk": 1,
+    "fields": {
+      "name": "Bob Dylan",
+      "votes": 0
+    }
+  },
+  {
+    "model": "base.candidate",
+    "pk": 2,
+    "fields": {
+      "name": "Tom Petty",
+      "votes": 0
+    }
+  },
+  {
+    "model": "base.candidate",
+    "pk": 3,
+    "fields": {
+      "name": "Cat Stevens",
+      "votes": 0
+    }
+  }
+]
