@@ -13,6 +13,7 @@ setup(
     packages=['django_vingd'],
     install_requires=[i.strip() for i in open('requirements.txt').readlines()],
     platforms=['OS Independent'],
+    license='MIT',
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
