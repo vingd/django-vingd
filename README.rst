@@ -144,7 +144,7 @@ To gracefully handle any kind of exception one should use VingdOrder handle_exce
 .. code-block:: python
 
     def handle_exception(self, e):
-        // log exception
-        // inform user
+        # log exception
+        # inform user
         return HttpResponse("Inform user that something has gone wrong.")
 

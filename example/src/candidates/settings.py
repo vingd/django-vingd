@@ -12,8 +12,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.abspath(os.path.join(BASE_DIR,'..'))
 ROOT_DIR = os.path.abspath(os.path.join(SRC_DIR,'..'))
 
-sys.path.append(os.path.join(ROOT_DIR,'..'))
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
