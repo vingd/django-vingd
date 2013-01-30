@@ -11,6 +11,8 @@ Basic setup
 
 2. Configure django settings::
 
+.. code-block:: python
+
     VINGD_SETTINGS = {
         'sandbox': {
             'VINGD_USR': 'test@knopso.com',
@@ -20,6 +22,8 @@ Basic setup
     VINGD_MODE = 'sandbox'
 
 3. In any django app that uses vingd define Vingd Orders details (models.py)::
+
+.. code-block:: python
 
     # Imaginary scenario where users are voting for candidates via vingd.
 
@@ -59,6 +63,8 @@ Basic setup
             return HttpResponseRedirect('/')
 
 4. Register order classes in your urls (urls.py)::
+
+.. code-block:: python
 
     from django_vingd.models import VingdMeta
     from base.models import VoteOrder
@@ -106,8 +112,10 @@ Popup version
 
 3. Handle ajax requests in your VoteOrders (models.py)::
 
+.. code-block:: python
+
     from django_vingd.util import HttpResponseJSON
-    ...
+    # ...
     def success_response(self):
         request = self.request
         if request.is_ajax():
@@ -132,6 +140,8 @@ Handling exceptions
 ===================
 
 To gracefully handle any kind of exception one should use VingdOrder handle_exception function::
+
+.. code-block:: python
 
     def handle_exception(self, e):
         // log exception
