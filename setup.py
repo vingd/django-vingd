@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(
-    name='DjangoVingd',
+    name='django-vingd',
     version='0.1.0',
     description='Django App for Vingd integration',
     long_description=open('README.rst').read(),

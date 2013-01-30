@@ -27,10 +27,3 @@ def append_get_params(url, dict):
 class HttpResponseJSON(HttpResponse):
     def __init__(self, dict):
         super(HttpResponseJSON, self).__init__(json.dumps(dict), mimetype="application/json", )
-
-def initialize_all_django_models():
-    for app in settings.INSTALLED_APPS:
-        try:
-            exec "from %s.models import VingdMeta" % app
-        except:
-            pass

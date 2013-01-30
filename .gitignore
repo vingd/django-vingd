@@ -3,3 +3,4 @@ build/
 dist/
 encrypteddata.egg-info/
 MANIFEST
+db.sql

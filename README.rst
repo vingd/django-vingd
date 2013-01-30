@@ -19,22 +19,13 @@ Basic setup
     }
     VINGD_MODE = 'sandbox'
 
-
-3. Add vingd somewhere in your urls::
-
-    from django_vingd.urls import VingdUrls
-    urlpatterns = patterns('',
-        ...
-        (r'^vgd/', include(VingdUrls())),
-    )
-
-4. In any django app that uses vingd define custom Vingd Orders (models.py)::
+3. In any django app that uses vingd define Vingd Orders details (models.py)::
 
     # Imaginary scenario where users are voting for candidates via vingd.
 
     from django.db import models
     from django.http import HttpResponseRedirect
-    from django_vingd.models import VingdMeta, VingdOrder
+    from django_vingd.models import VingdOrder
 
     class Candidate(models.Model):
         name = models.CharField(max_length=128)
@@ -44,7 +35,6 @@ Basic setup
             Candidate.objects.filter(id=self.id).update(votes=models.F('votes')+1)
             self.votes += 1
 
-    @VingdMeta.register()
     class VoteOrder(VingdOrder):
         candidate = models.ForeignKey(Candidate)
 
@@ -67,6 +57,17 @@ Basic setup
         # Serve requested content to user
         def success_response(self):
             return HttpResponseRedirect('/')
+
+4. Register order classes in your urls (urls.py)::
+
+    from django_vingd.models import VingdMeta
+    from base.models import VoteOrder
+    
+    VingdMeta.register([VoteOrder, ])
+    
+    urlpatterns = patterns('',
+        (r'^vgd/', include('django_vingd.urls')),
+    )
 
 5. In HTML template place vingd order forms::
 

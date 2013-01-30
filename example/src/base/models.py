@@ -2,7 +2,7 @@
 
 from django.db import models
 from django.http import HttpResponseRedirect, HttpResponse
-from django_vingd.models import VingdOrder, VingdMeta
+from django_vingd.models import VingdOrder
 from django_vingd.util import HttpResponseJSON
 
 class Candidate(models.Model):
@@ -13,7 +13,6 @@ class Candidate(models.Model):
         Candidate.objects.filter(id=self.id).update(votes=models.F('votes')+1)
         self.votes += 1
 
-@VingdMeta.register()
 class VoteOrder(VingdOrder):
     candidate = models.ForeignKey(Candidate)
 

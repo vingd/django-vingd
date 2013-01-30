@@ -15,11 +15,9 @@ class VingdMeta():
     VINGD_ORDER_CLSES = {}
 
     @staticmethod
-    def register():
-        def f(Cls):
+    def register(Clses):
+        for Cls in Clses:
             VingdMeta.VINGD_ORDER_CLSES[Cls.get_nametag()] = Cls
-            return Cls
-        return f
 
     @staticmethod
     def get_cls_from_nametag(type):
