@@ -9,7 +9,7 @@ Basic setup
 
 1. Add "django_vingd" to INSTALLED_APPS.
 
-2. Configure django settings::
+2. Configure django settings:
 
 .. code-block:: python
 
@@ -21,7 +21,7 @@ Basic setup
     }
     VINGD_MODE = 'sandbox'
 
-3. In any django app that uses vingd define Vingd Orders details (models.py)::
+3. In any django app that uses vingd define Vingd Orders details (models.py):
 
 .. code-block:: python
 
@@ -62,7 +62,7 @@ Basic setup
         def success_response(self):
             return HttpResponseRedirect('/')
 
-4. Register order classes in your urls (urls.py)::
+4. Register order classes in your urls (urls.py):
 
 .. code-block:: python
 
@@ -75,7 +75,7 @@ Basic setup
         (r'^vgd/', include('django_vingd.urls')),
     )
 
-5. In HTML template place vingd order forms::
+5. In HTML template place vingd order forms:
 
     {% for candidate in candidates %}
         <form action="{% url vingd_order "VoteOrder" %}" method="POST">
@@ -94,7 +94,7 @@ Popup version
 
 1. Add jQuery to your page.
 
-2. Add popup related javascript to HTML head::
+2. Add popup related javascript to HTML head:
 
     {% load vingd_tt %}
     {% vingd_scripts %}
