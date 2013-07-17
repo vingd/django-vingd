@@ -162,8 +162,3 @@ VINGD_SETTINGS = {
 }
 VINGD_MODE = 'sandbox'
 
-#VINGD_URL = 'https://www.vingd.lo'
-#VINGD_CDN = 'http://cdn.knopso.lo/'
-#VINGD_USR = 'jam@knopso.com'
-#VINGD_PWD = '123'
-
